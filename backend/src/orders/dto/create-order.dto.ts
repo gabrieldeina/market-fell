@@ -1,13 +1,14 @@
 import { IsNotEmpty } from 'class-validator';
+import { Product } from 'src/products/product.entity';
 
-export class CreateProductDto {
+export class CreateOrderDto {
   @IsNotEmpty({
-    message: 'Preço deve ser preenchido.',
+    message: 'Total deve ser calculado para finalizar compra.',
   })
   total: number;
 
   @IsNotEmpty({
-    message: 'Categoria deve ser preenchida.',
+    message: 'Lista de produtos deve ser preenchida para finalizar compra.',
   })
-  category: string;
+  products: Product[];
 }

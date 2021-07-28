@@ -2,17 +2,17 @@ import { IsNotEmpty } from 'class-validator';
 
 export class CreateProductDto {
   @IsNotEmpty({
-    message: 'Nome deve ser preenchido.',
+    message: 'Nome do produto deve ser preenchido.',
   })
   name: string;
 
   @IsNotEmpty({
-    message: 'Preço deve ser preenchido.',
+    message: 'Preço do produto deve ser preenchido.',
   })
   price: number;
 
   @IsNotEmpty({
-    message: 'Categoria deve ser preenchida.',
+    message: 'Categoria do produto deve ser preenchida.',
   })
   category: string;
 }

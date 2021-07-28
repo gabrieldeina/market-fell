@@ -13,13 +13,16 @@ export class Product extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   @Column()
   price: number;
 
-  @Column()
+  @Column({
+    enum: ['DOCE', 'SALGADO', 'BEBIDA', 'BEBIDA ALCOOLICA', 'ITEM'],
+    default: 'ITEM',
+  })
   category: string;
 
   @Column()
