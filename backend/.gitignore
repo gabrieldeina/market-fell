@@ -13,6 +13,9 @@ lerna-debug.log*
 # OS
 .DS_Store
 
+# todo
+*.todo.txt
+
 # Tests
 /coverage
 /.nyc_output
