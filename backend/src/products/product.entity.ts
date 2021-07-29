@@ -1,3 +1,4 @@
+import { Order } from 'src/orders/order.entity';
 import {
   Entity,
   Column,
@@ -6,6 +7,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity()
@@ -13,11 +15,14 @@ export class Product extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column()
   name: string;
 
   @Column()
   price: number;
+
+  @ManyToOne(() => Order, (order) => order.products)
+  order: Order;
 
   @Column()
   category: string;

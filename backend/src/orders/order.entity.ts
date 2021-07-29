@@ -15,6 +15,6 @@ export class Order extends BaseEntity {
   @Column()
   total: number;
 
-  @OneToMany(() => Product, (product) => product.name)
+  @OneToMany(() => Product, (product) => product.order)
   products: Product[];
 }
