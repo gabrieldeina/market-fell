@@ -1,5 +1,11 @@
 import { Product } from 'src/products/product.entity';
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  OneToMany,
+} from 'typeorm';
 
 @Entity()
 export class Order extends BaseEntity {
@@ -9,6 +15,6 @@ export class Order extends BaseEntity {
   @Column()
   total: number;
 
-  @Column()
+  @OneToMany(() => Product, (product) => product.name)
   products: Product[];
 }

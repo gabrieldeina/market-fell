@@ -19,10 +19,7 @@ export class Product extends BaseEntity {
   @Column()
   price: number;
 
-  @Column({
-    enum: ['DOCE', 'SALGADO', 'BEBIDA', 'BEBIDA ALCOOLICA', 'ITEM'],
-    default: 'ITEM',
-  })
+  @Column()
   category: string;
 
   @Column()
