@@ -1,1 +1,18 @@
-<p>list works!</p>
+<a routerLink="/order/create">New Order</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Total</th>
+      <th>Sale Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.total }}</td>
+      <td>{{ order.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+    </tr>
+  </tbody>
+</table>

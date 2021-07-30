@@ -1,1 +1,22 @@
-<p>list works!</p>
+<a routerLink="/product/create">New Product</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+    </tr>
+  </tbody>
+</table>

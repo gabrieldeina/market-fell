@@ -1,1 +1,5 @@
-<p>create works!</p>
+<label for="total">Total</label>
+<input type="text" name="total" [(ngModel)]="order.total" />
+<button (click)="create()">Create</button>
+
+<a routerLink="/orders">List Orders</a>
