@@ -1,0 +1,2 @@
+1 - Entender como utilizar lista de products
+2 - Fazer o GET da order retornar array de products

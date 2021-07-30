@@ -6,7 +6,6 @@ import {
   BaseEntity,
   CreateDateColumn,
   UpdateDateColumn,
-  DeleteDateColumn,
   ManyToOne,
 } from 'typeorm';
 
@@ -34,8 +33,4 @@ export class Product extends BaseEntity {
   @Column()
   @UpdateDateColumn()
   updatedAt: Date;
-
-  @Column({ nullable: true })
-  @DeleteDateColumn()
-  deletedAt: Date;
 }

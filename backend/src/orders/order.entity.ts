@@ -5,6 +5,8 @@ import {
   PrimaryGeneratedColumn,
   BaseEntity,
   OneToMany,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -15,6 +17,14 @@ export class Order extends BaseEntity {
   @Column()
   total: number;
 
-  @OneToMany(() => Product, (product) => product.order)
+  @OneToMany(() => Product, (product) => product.order, { eager: true })
   products: Product[];
+
+  @Column()
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @Column()
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
