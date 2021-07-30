@@ -4,9 +4,10 @@ import {
   Column,
   PrimaryGeneratedColumn,
   BaseEntity,
-  OneToMany,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 
 @Entity()
@@ -17,7 +18,8 @@ export class Order extends BaseEntity {
   @Column()
   total: number;
 
-  @OneToMany(() => Product, (product) => product.order, { eager: true })
+  @ManyToMany(() => Product, (product) => product.orders)
+  @JoinTable()
   products: Product[];
 
   @Column()

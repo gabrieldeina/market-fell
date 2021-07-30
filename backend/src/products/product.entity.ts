@@ -6,7 +6,7 @@ import {
   BaseEntity,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
+  ManyToMany,
 } from 'typeorm';
 
 @Entity()
@@ -20,11 +20,11 @@ export class Product extends BaseEntity {
   @Column()
   price: number;
 
-  @ManyToOne(() => Order, (order) => order.products)
-  order: Order;
-
   @Column()
   category: string;
+
+  @ManyToMany(() => Order, (order) => order.products)
+  orders: Promise<Order[]>;
 
   @Column()
   @CreateDateColumn()
