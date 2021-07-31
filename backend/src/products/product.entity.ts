@@ -7,6 +7,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToMany,
+  DeleteDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -24,7 +25,7 @@ export class Product extends BaseEntity {
   category: string;
 
   @ManyToMany(() => Order, (order) => order.products)
-  orders: Promise<Order[]>;
+  orders: Order[];
 
   @Column()
   @CreateDateColumn()
@@ -33,4 +34,8 @@ export class Product extends BaseEntity {
   @Column()
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @Column()
+  @DeleteDateColumn()
+  deletedAt: Date;
 }

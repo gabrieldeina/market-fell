@@ -41,4 +41,9 @@ export class OrdersController {
   async delete(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.ordersService.delete(id);
   }
+
+  @Delete()
+  async deleteById(@Body('id') id: number): Promise<void> {
+    return this.ordersService.delete(+id);
+  }
 }

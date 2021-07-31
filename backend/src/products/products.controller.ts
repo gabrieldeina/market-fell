@@ -3,7 +3,6 @@ import {
   Get,
   Post,
   Put,
-  ParseIntPipe,
   Param,
   Delete,
   Body,
@@ -31,14 +30,24 @@ export class ProductsController {
 
   @Put('/:id')
   async update(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id') id: number,
     @Body() createProduct: CreateProductDto,
   ): Promise<Product> {
-    return this.productsService.update(id, createProduct);
+    return this.productsService.update(+id, createProduct);
   }
 
   @Delete('/:id')
-  async delete(@Param('id', ParseIntPipe) id: number): Promise<Product> {
-    return this.productsService.delete(id);
+  async delete(@Param('id') id: number): Promise<Product> {
+    return this.productsService.delete(+id);
+  }
+
+  @Delete()
+  async deleteById(@Body('id') id: number): Promise<Product> {
+    return this.productsService.delete(+id);
+  }
+
+  @Get('/:id')
+  async getById(@Param('id') id: number): Promise<Product> {
+    return this.productsService.findById(+id);
   }
 }

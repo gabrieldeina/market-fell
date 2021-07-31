@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
   ManyToMany,
   JoinTable,
+  DeleteDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -29,4 +30,8 @@ export class Order extends BaseEntity {
   @Column()
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @Column()
+  @DeleteDateColumn()
+  deletedAt: Date;
 }

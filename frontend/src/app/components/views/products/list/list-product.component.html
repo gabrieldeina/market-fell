@@ -8,6 +8,7 @@
       <th>Price</th>
       <th>Category</th>
       <th>Created At</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,17 @@
       <td>{{ product.price }}</td>
       <td>{{ product.category }}</td>
       <td>{{ product.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+      <td>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="deleteProduct()"
+          [(ngModel)]="idProduct"
+          value="{{ product.id }}"
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

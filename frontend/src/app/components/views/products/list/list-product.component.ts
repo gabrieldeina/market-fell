@@ -9,6 +9,7 @@ import { ProductService } from "src/app/services/product.service";
 })
 export class ListProductComponent implements OnInit {
   products: Product[] = [];
+  idProduct!: string;
 
   constructor(private service: ProductService) {}
 
@@ -16,5 +17,10 @@ export class ListProductComponent implements OnInit {
     this.service.list().subscribe((products) => {
       this.products = products;
     });
+  }
+
+  deleteProduct(): void {
+    console.log(this.idProduct)
+    this.service.deleteById(+this.idProduct).subscribe();
   }
 }

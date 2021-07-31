@@ -6,6 +6,7 @@
       <th>#</th>
       <th>Total</th>
       <th>Sale Day</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,16 @@
       <td>{{ order.id }}</td>
       <td>{{ order.total }}</td>
       <td>{{ order.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+      <td>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="deleteOrder()"
+          [(ngModel)]="idOrder"
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

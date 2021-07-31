@@ -2,3 +2,7 @@ table {
     width: 70%;
     text-align: center;
 }
+
+td {
+    padding: 2px;
+}

@@ -1,5 +1,22 @@
-<label for="total">Total</label>
-<input type="text" name="total" [(ngModel)]="order.total" />
-<button (click)="create()">Create</button>
+<mat-card-title>Add Products</mat-card-title>
+<mat-card>
+  <mat-card-content>
+    <div>
+      <mat-form-field>
+        <mat-label>Product</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let product of productsAux"
+            value="{{ product.id }}"
+            [(ngModel)]="idProduct"
+          >
+            {{ product.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addProduct()">Add</button>
+    </div>
+  </mat-card-content>
+</mat-card>
 
 <a routerLink="/orders">List Orders</a>

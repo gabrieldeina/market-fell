@@ -18,4 +18,8 @@ export class OrderService {
   create(order: Order): Observable<Order> {
     return this.http.post<Order>(`${this.baseUrl}orders`, order);
   }
+
+  deleteById(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}orders`);
+  }
 }
