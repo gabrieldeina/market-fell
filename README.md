@@ -14,17 +14,17 @@
 
 <p><b>After this, inside the <i>.env</i> file you will need to especify your database path.</b></p>
 <sub>Here is an example</sub>
-<code>// SQL command
-CREATE SCHEMA `marketfell`;
+<code>
+<p>// SQL command</p>
+<p>CREATE SCHEMA `marketfell`;</p>
 
-// .env file
+<p>// .env file</p>
+<p># DB</p>
 
-# DB
-
-DB_HOST='localhost'
-DB_USERNAME='root'
-DB_PASSWORD='yourPasswordHere'
-DB_NAME='marketfell'
+<p>DB_HOST='localhost'</p>
+<p>DB_USERNAME='root'</p>
+<p>DB_PASSWORD='yourPasswordHere'</p>
+<p>DB_NAME='marketfell'</p>
 </code>
 
 ### Autor
